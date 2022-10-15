@@ -1,0 +1,262 @@
+/* Boilerplate to make sizing and arranging elements easier */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* Make the body take up the whole screen and add the right text and fonts */
+body {
+    background-color: #f2f2f2;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* This is just used to visualize divs, not actually used in the page */
+/* * div {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+} */
+
+/* Positioning for navbar */
+#NavBar {
+    margin: 0;
+    width: 100%;
+    height: 5.7vh;
+}
+
+/* Overlay for navbar */
+#NavBar * {
+    z-index: 3;
+}
+
+/* Styling for elements in the navbar */
+#NavBar ul {
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+#NavBar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#NavBar li a:hover {
+    background-color: #111;
+}
+
+/* Footer styling */
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1vh;
+    height: 5vh;
+    font-size: 1.25em;
+    z-index: 2;
+}
+
+/* Content styling */
+#Content {
+    width: 100%;
+    height: 100vh;
+}
+
+.column {
+    float: left;
+}
+
+#Content .side {
+    width: 25%;
+    z-index: 1;
+}
+
+#Content .main {
+    width: 75%;
+    height: 100%;
+    z-index: 0;
+}
+
+/* Left Sidebar and contents in the left sidebar */
+.side {
+    border-right: 1px solid black;
+    height: 100%;
+    position: fixed;
+}
+
+#Content ul {
+    margin-left: 0;
+    text-align: center;
+    width: 100%;
+}
+
+#Content li {
+    list-style: none;
+    border-top: 1px solid #262626;
+    border-bottom: 1px solid #262626;
+    margin: -1px 0;
+    margin-left: -40px;
+    transition: 0.5s;
+}
+
+#Content li a {
+    display: block;
+    color: #262626;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#Content li a span {
+    position: relative;
+    display: inline-block;
+}
+
+#Content li a span:nth-child(1) {
+    width: 30px;
+    text-align: center;
+    transition: 0.5s;
+}
+
+#Content ul li:hover a span:nth-child(1) {
+    color: #f44336;
+    transition: 0.5s;
+}
+
+/* Main Content */
+.main {
+    margin-top: 30px;
+    padding: 0 20px;
+    margin-left: 25%;
+}
+
+.bottom {
+    margin-top: 110%;
+}
+
+/* style of each card in my music app */
+.cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 0 1 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Image styling to fit into cards */
+.img-container {
+    height: 100px;
+    width: 100px;
+    z-index: 2;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Linked text styling - removing underline and changing color */
+a {
+    text-decoration: none;
+}
+
+/* styling to emphasis music on hover */
+/* .card:hover .play-container {
+    display: inline;
+} */
+
+.card:hover audio {
+    display: inline;
+}
+
+.card:hover:hover .img-container {
+    height: 110px;
+    width: 110px;
+}
+
+/* this fixes some positioning issues with song titles when hovering */
+.card:hover p {
+    position: relative;
+    top: -50px;
+    z-index: 100;
+}
+
+.play-container {
+    position: relative;
+    display: none;
+    top: -70px;
+    font-size: 30px;
+    width: 25px;
+    z-index: 2;
+}
+
+/* styling for audio */
+audio {
+    position: relative;
+    top: -50px;
+    width: 100%;
+    height: 50px;
+    z-index: 2;
+    display: none;
+}
+
+/* Media queries - change the view when I'm on mobile or tablet*/
+@media screen and (max-width: 600px) {
+
+    #Content .side,
+    #Content .main {
+        width: 100%;
+    }
+
+    #Content .main {
+        margin-left: 5vw;
+        z-index: 0;
+    }
+
+    .side {
+        position: fixed;
+        background-color: #f2f2f2;
+        height: 214px;
+    }
+
+    .main {
+        margin-top: 250px;
+        position: absolute;
+        left: -30px;
+    }
+
+    .bottom {
+        display: None;
+    }
+}
