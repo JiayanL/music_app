@@ -261,13 +261,13 @@ audio {
     }
 }
 
-/* Sign Up Screen Styling */
+/* general styling for my signup container */
 .signup-container * {
     margin-bottom: 10px;
     margin-top: 10px;
 }
 
-/* Set a style for all buttons */
+/* set style for buttons in sign up page */
 .signup-container button {
     background-color: #04AA6D;
     color: white;
@@ -283,12 +283,12 @@ audio {
     opacity: 1;
 }
 
-/* Extra styles for the cancel button */
+/* make the cancel button red */
 .signup-container .cancelbtn {
     background-color: #f44336;
 }
 
-/* Full-width input fields */
+/* styl emy input fields */
 .signup-container input[type=text],
 .signup-container input[type=password] {
     width: 100%;
@@ -296,4 +296,21 @@ audio {
     margin: 5px 0 22px 0;
     display: inline-block;
     background: #f1f1f1;
+}
+
+
+.signup-container .img-container {
+    height: 50px;
+    width: 200px;
+    z-index: 2;
+}
+
+.signup-container img {
+    max-width: 100%;
+    max-height: 100%;
+    opacity: .75;
+}
+
+.signup-container img:hover {
+    opacity: 1;
 }
