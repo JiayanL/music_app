@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 1</title>
+    <link rel="stylesheet" href="../style.css" />
+    <!--Import Font Awesome for in-app icons-->
+    <script src="https://kit.fontawesome.com/13ed3a7f32.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="login">
+        Login to Existing Account
+        <div>
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required> 
+        </div>
+        <div>
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required> 
+        </div>
+        <button class="submit" id="loginbutton" onclick="verifylogin(username,psw)">Login</button>
+        <div class="tab">
+            <div class="img-container">
+                <img src="https://i.stack.imgur.com/JkSed.png" />
+                <img src="https://blog.dashlane.com/wp-content/uploads/2018/03/facebook-sign-in-button.png" />
+            </div>         
+        </div>
+    </div>
+</body>

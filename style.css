@@ -314,3 +314,18 @@ audio {
 .signup-container img:hover {
     opacity: 1;
 }
+
+
+.tab { 
+    margin-left: 205px; 
+}
+
+/* login page formatting */
+.login {
+    position: relative;
+    top: 80px;
+    width: 100%;
+    line-height: 2;
+    text-align: center;
+}
+
