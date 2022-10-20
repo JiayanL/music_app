@@ -316,9 +316,6 @@ audio {
 }
 
 
-.tab { 
-    margin-left: 205px; 
-}
 
 /* login page formatting */
 .login {
@@ -328,4 +325,10 @@ audio {
     line-height: 2;
     text-align: center;
 }
+
+/* login form formatting */
+#loginform {
+    justify-items: center;
+    align-items: center;
+  }
 

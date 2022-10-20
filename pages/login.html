@@ -7,27 +7,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Exercise 1</title>
     <link rel="stylesheet" href="../style.css" />
+    <script src="login.js"></script>
     <!--Import Font Awesome for in-app icons-->
     <script src="https://kit.fontawesome.com/13ed3a7f32.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="login">
-        Login to Existing Account
-        <div>
-            <label for="username"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="username" required> 
-        </div>
-        <div>
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required> 
-        </div>
-        <button class="submit" id="loginbutton" onclick="verifylogin(username,psw)">Login</button>
-        <div class="tab">
-            <div class="img-container">
-                <img src="https://i.stack.imgur.com/JkSed.png" />
-                <img src="https://blog.dashlane.com/wp-content/uploads/2018/03/facebook-sign-in-button.png" />
-            </div>         
+        Log in to Existing Account
+        <form id="loginform">
+            <div>
+                <label for="username"><b>Username</b></label>
+                <input type="text" name="username" id="username-field" placeholder="Username">
+            </div>
+            <div>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" name="password" id="password-field" placeholder="Password">
+            </div>
+            <div>
+                <input type="submit" value="Login" onclick=verifylogin()>
+            </div>
+            <!-- 
+            <div>
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" id="username" required> 
+            </div>
+            <div>
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" id="password" required> 
+            </div>
+            <button type="submit" class="loginbtn" onclick=verifylogin()>Login</button>
+        -->
+        </form>
+        <div class="img-container">
+            <img src="https://i.stack.imgur.com/JkSed.png" />
+            <img src="https://blog.dashlane.com/wp-content/uploads/2018/03/facebook-sign-in-button.png" />       
         </div>
     </div>
 </body>
