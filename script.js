@@ -27,6 +27,28 @@ function getCookie(cname) {
 }
 
 /* -------------------------------------------------------------------------- */
+/*                               Form Functions                               */
+/* -------------------------------------------------------------------------- */
+
+function validateSignUp() {
+    let x = document.forms["signup"]["fname"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+
+/* -------------------------------------------------------------------------- */
+/*                             Log in and log out                             */
+/* -------------------------------------------------------------------------- */
+// TODO: Still in progress
+function logIn() {
+    /* replace signup with profile picture */
+    /* replace login with account */
+    $("#right-header").text("Account");
+
+}
+/* -------------------------------------------------------------------------- */
 /*                             Document Functions                             */
 /* -------------------------------------------------------------------------- */
 
@@ -34,7 +56,6 @@ function getCookie(cname) {
 $(document).ready(function () {
     /* Global variables for easier access */
     var cookies_store = [];
-    var logged_in = true;
 
     /* Prevent default behavior on form submission */
     $("form").on("submit", function (ev) {
@@ -57,6 +78,9 @@ $(document).ready(function () {
             name: $("#name").val(),
             surname: $("#surname").val()
         };
+
+        /* validate form */
+        validateSignUp();
 
         /* check if email exists in the cookie store */
         for (const cookie of cookies_store) {
@@ -85,4 +109,5 @@ $(document).ready(function () {
         $("#name").val("");
         $("#surname").val("");
     });
+
 });
