@@ -1,9 +1,25 @@
-const loginform = document.getElementById("loginform");
+function submitloginform() {
+    alert("first");
+    $("#loginform").submit();
+    alert("here");
+    verifylogin();
+ }
+ $(document).ready(function(){
+ $( "#form" ).submit(function() {
+    alert("made it");
+    let inputs = $( ":input" );
+    let user = alert(inputs.eq(0).val());
+    let pw = alert(inputs.eq(1).val());
+    alert("made it");
+    let ind = verifylogin(user,pw); 
+    if (ind  === true ) {
+        alert("found");
+        // return to homepage
+      return;
+    }
+ })})
 
-
-function verifylogin() {
-    const user = loginform.username;
-    const pw = loginform.password;
+function verifylogin(user,pw) {
     let key = "Username=";
     let decodedCookie = decodeURIComponent(document.cookie);
     let splitCookie = decodedCookie.split(';');
@@ -19,7 +35,7 @@ function verifylogin() {
             }
             let password = nextCookie.substring(9,nextCookie.length);
             if (password == pw) {
-                return true; // return to home page
+                return true;
             }
             else {
                 alert("Invalid Username or Password")
@@ -28,6 +44,7 @@ function verifylogin() {
         }
     }
 }
+
 
 
 function createaccount(user, pw) {
