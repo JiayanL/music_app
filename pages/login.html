@@ -15,29 +15,18 @@
 <body>
     <div class="login">
         Log in to Existing Account
-        <form id="loginform">
+        <form name="login" action="$">
             <div>
                 <label for="username"><b>Username</b></label>
-                <input type="text" name="username" id="username-field" placeholder="Username">
+                <input type="text" name="username" id="username" placeholder="Username">
             </div>
             <div>
                 <label for="psw"><b>Password</b></label>
-                <input type="password" name="password" id="password-field" placeholder="Password">
+                <input type="password" name="psw" id="psw" placeholder="Password">
             </div>
             <div>
-                <input type="submit" value="Login" onclick=verifylogin()>
+                <button type="submit" value="Login">Login</button>
             </div>
-            <!-- 
-            <div>
-                <label for="username"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="username" id="username" required> 
-            </div>
-            <div>
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="password" id="password" required> 
-            </div>
-            <button type="submit" class="loginbtn" onclick=verifylogin()>Login</button>
-        -->
         </form>
         <div class="img-container">
             <img src="https://i.stack.imgur.com/JkSed.png" />
@@ -45,3 +34,4 @@
         </div>
     </div>
 </body>
+
