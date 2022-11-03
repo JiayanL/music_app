@@ -110,35 +110,34 @@ $(document).ready(function () {
         $("#surname").val("");
     });
 
-});
-
-
     /* -------------------------------------------------------------------------- */
     /*                              Login Functions                             */
     /* -------------------------------------------------------------------------- */
 
-$(".loginbtn").click(function () {
-
-    /* collect user info */
-    const user_info = {
-        username: $("#username").val(),
-        password: $("#psw").val(),
-    };
-    alert(username);
-    ind = false;
-    /* check if email & matching psw exists in the cookie store */
-    for (const cookie of cookies_store) {
-        if (cookie.username == username) {
-            if (cookie.password == user_info.password) {
-                ind = true;
-            }
-            else {
-                alert("Invalid username or password");
-                return false;                
+    /* Submit login form */
+    $(".loginbtn").click(function () {
+        preventDefault();
+        alert("here");
+        /* assign info */
+        let user = $("#username").val();
+        let password = $("#psw").val();
+        alert(user);
+        ind = false;
+        /* check if email & matching psw exists in the cookie store */
+        for (const cookie of cookies_store) {
+            if (cookie.username == user) {
+                if (cookie.password == pass) {
+                    ind = true;
+                }
+                else {
+                    alert("Invalid username or password");
+                    return false;                
+                }
             }
         }
-    }
-    if (ind == false) {
-        alert("Invalid username or password");
-    }
-})
+        if (ind == false) {
+            alert("Invalid username or password");
+        }
+    });
+});
+
