@@ -31,11 +31,12 @@ function getCookie(cname) {
 /* -------------------------------------------------------------------------- */
 
 function validateSignUp() {
-    let x = document.forms["signup"]["fname"].value;
+    let x = document.forms["signup"]["fname"];
     if (x == "") {
-        alert("Name must be filled out");
+        // alert("Name must be filled out");
         return false;
     }
+    return true;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -59,7 +60,6 @@ $(document).ready(function () {
 
     /* Prevent default behavior on form submission */
     $("form").on("submit", function (ev) {
-        console.log("form clicked");
         ev.preventDefault();
         ev.stopPropagation();
     })
@@ -70,6 +70,7 @@ $(document).ready(function () {
 
     /* Submission Workflow - cookies and validation */
     $(".signupbtn").click(function () {
+        console.log("running through signup")
         /* collect user info */
         const user_info = {
             username: $("#username").val(),
@@ -80,15 +81,21 @@ $(document).ready(function () {
         };
 
         /* validate form */
-        validateSignUp();
+        if (!validateSignUp()) {
+            alert("Form is incomplete")
+            return false;
+        };
+
+        console.log("reached cookies")
 
         /* check if email exists in the cookie store */
         for (const cookie of cookies_store) {
             if (cookie.email == user_info.email) {
                 alert("Unable to create an account. An Account with this email exists.");
-                return;
+                return false;
             }
         }
+
 
         /* cookie is valid and prepare to submit all cookies */
         cookies_store.push(user_info);
@@ -99,6 +106,10 @@ $(document).ready(function () {
         // document.cookie = cookie;
         setCookie(user_info.email, cookie, 10);
         alert("Account created.");
+
+        // /* send user to home */
+        window.location.href = "/index.html";
+
     });
 
     /* Clear submission */
@@ -117,24 +128,27 @@ $(document).ready(function () {
     /* Submit login form */
     $(".loginbtn").click(function () {
         /* assign info */
-        let user = $("#username").val();
-        let password = $("#psw").val();
+        let user = $("#lusername").val();
+        let password = $("#lpsw").val();
         ind = false;
         /* check if email & matching psw exists in the cookie store */
-        for (const cookie of cookies_store) {
-            if (cookie.username == user) {
-                if (cookie.password == password) {
-                    ind = true;
-                } else {
-                    alert("Invalid username or password");
-                    return false;
-                }
-            }
-        }
-        if (ind == false) {
-            alert("Invalid username or password");
+        console.log(cookies_store);
+        cookie = getCookie(user);
+
+        if (cookie == "") {
+            alert("User does not exist.");
             return false;
         }
-        console.log("logged in");
+
+        if (password !== JSON.parse(cookie).password) {
+            alert("Incorrect password for selected user.");
+            return false;
+        }
+
+        ind = true;
+        setCookie("user", cookie, 10);
+
+        alert(JSON.parse(cookie).username + " logged in successfully. Redirecting to homepage");
+        window.location.href = "/index.html";
     });
 });
