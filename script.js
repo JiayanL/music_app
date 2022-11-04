@@ -49,6 +49,15 @@ function logIn() {
     $("#right-header").text("Account");
 
 }
+
+function isLoggedIn() {
+    cookie = getCookie("user");
+    if (cookie != "") {
+        return false;
+    }
+    return true;
+};
+
 /* -------------------------------------------------------------------------- */
 /*                             Document Functions                             */
 /* -------------------------------------------------------------------------- */
@@ -57,6 +66,12 @@ function logIn() {
 $(document).ready(function () {
     /* Global variables for easier access */
     var cookies_store = [];
+
+    /* Check if user is logged in */
+    if (isLoggedIn()) {
+        /* move to login page */
+        window.location.href = "/pages/postlogin.html";
+    }
 
     /* Prevent default behavior on form submission */
     $("form").on("submit", function (ev) {
@@ -149,6 +164,6 @@ $(document).ready(function () {
         setCookie("user", cookie, 10);
 
         alert(JSON.parse(cookie).username + " logged in successfully. Redirecting to homepage");
-        window.location.href = "/index.html";
+        window.location.href = "/pages/postlogin.html";
     });
 });

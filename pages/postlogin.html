@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 1</title>
+    <link rel="stylesheet" href="/style.css" />
+    <!--Import Font Awesome for in-app icons-->
+    <script src="https://kit.fontawesome.com/13ed3a7f32.js" crossorigin="anonymous"></script>
+    <!--Import JQuery-->
+</head>
+
+<body>
+    <!--Fixed navbar at the top-->
+    <div id="NavBar">
+        <ul>
+            <li class="left"><a href="#">
+                    <i class="fab fa-youtube"></i>
+                </a></li>
+            <li class="left"><a href="#">Jiayan's Music Space</a></li>
+            <li id="right-header" class="right"><a href="">Account</a></li>
+            <li id="left-header" class="right"><a href="">
+                    <div class="pfp-container">
+                        <img
+                            src="https://www.forbes.com/advisor/wp-content/uploads/2022/08/bored_ape_yacht_club.jpeg-1.jpg" />
+                    </div>
+                </a></li>
+        </ul>
+    </div>
+
+    <!--Div containing main content-->
+    <div id="Content">
+        <!--Responsive fixed sidebar with settings and privacy-->
+        <div class="column side">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span> <i class="fas fa-house-user"></i></span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span> <i class="fas fa-music"></i></span>
+                        <span>Library</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span> <i class="fas fa-search"></i></span>
+                        <span>Search</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span><i class="fas fa-wrench"></i></span>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            <ul class="bottom">
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Cookies Policy</a></li>
+            </ul>
+        </div>
+        <!--Main section with musical content-->
+        <div class="column main">
+            <!--Each row of musical artists-->
+            <!--Songs for Post Malone-->
+            <div class="music-bar">
+                <!--All of Post Malone's songs on my platform-->
+                <h2>Post Malone</h2>
+                <!--Container for all songs-->
+                <section class="cards">
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img src="https://i.scdn.co/image/ab67616d0000b2739478c87599550dd73bfa7e02" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/PostMaloneCircles.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>Circles</p>
+                    </article>
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img src="https://img.sheetmusic.direct/catalogue/product/smd_148664/large.jpg" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/PostMaloneBetterNow.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>Better Now</p>
+                    </article>
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img src="https://i.scdn.co/image/ab67616d0000b273e549beeab5d3020397887755" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/PostMaloneWhiteIverson.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>White Iverson</p>
+                    </article>
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img src="https://i.scdn.co/image/ab67616d0000b27334362676667a4322838ccc97" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/PostMeloneLemon.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>Lemon Tree</p>
+                    </article>
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img src="https://i1.sndcdn.com/artworks-000354238575-wmv3pn-t500x500.jpg" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/PostMaloneParanoid.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>Paranoid</p>
+                    </article>
+                </section>
+            </div>
+
+            <!--Songs for Shakira-->
+            <div class="music-bar">
+                <!--All of Post Malone's songs on my platform-->
+                <h2>Shakira</h2>
+                <!--Container for all songs-->
+                <section class="cards">
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img src="https://m.media-amazon.com/images/I/51C61WCVp5L._SX355_.jpg" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/ShakiraHipsDontLie.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>Hips Don't Lie</p>
+                    </article>
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img
+                                src="http://78.media.tumblr.com/54479e3fe64e0b770f2e08af8be81781/tumblr_n5z5dxZ2zl1qln5jgo1_500.jpg" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/ShakiraLaLaLa.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>La La La</p>
+                    </article>
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img
+                                src="https://play-lh.googleusercontent.com/TD2qSexmiWgjSsKOQJ9cfjz-5sUPblTDc1IXcWf_y79StNBRPcTC6q5L9tVBUFcw7mU" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/ShakiraMeEnamore.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>Me Enamore</p>
+                    </article>
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img src="https://i.scdn.co/image/ab67616d0000b2733d422281f17e3ae30df2dc18" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/ShakiraWakaWaka.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>Waka Waka</p>
+                    </article>
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img src="https://hypeddit-gates-prod.s3.amazonaws.com/q8e7vw_coverartmanual" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/ShakiraWheneverWhenever.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>Whenever</p>
+                    </article>
+                </section>
+            </div>
+
+            <!--Songs for Coldplay-->
+            <div class="music-bar">
+                <!--All of Post Malone's songs on my platform-->
+                <h2>Coldplay</h2>
+                <!--Container for all songs-->
+                <section class="cards">
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img
+                                src="https://upload.wikimedia.org/wikipedia/en/3/3e/Coldplay%2C_Adventure_Of_A_Lifetime%2C_Artwork.jpg" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/ColdplayAdventure.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>Adventure</p>
+                    </article>
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img
+                                src="https://www.lahiguera.net/musicalia/artistas/coldplay/disco/6537/tema/11728/coldplay_hymn_for_the_weekend-portada.jpg" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/ColdplayHymn.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>Hymn</p>
+                    </article>
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img src="https://i.scdn.co/image/ab67616d0000b273de0cd11d7b31c3bd1fd5983d" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/ColdplayParadise.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>Paradise</p>
+                    </article>
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img src="https://m.media-amazon.com/images/I/9145yafeO2L._SL1500_.jpg" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/ColdplayVivaLaVida.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>Viva La Vida</p>
+                    </article>
+                    <!--Container for individual songs-->
+                    <article class="card">
+                        <!--Container to control images-->
+                        <div class="img-container">
+                            <img src="https://i.scdn.co/image/ab67616d0000b2733d92b2ad5af9fbc8637425f0" />
+                        </div>
+                        <!--Container to control behavior of play button and audio-->
+                        <div class="play-container">
+                            <a class="play" href="#"><i class="fas fa-play"></i></a>
+                        </div>
+                        <audio controls>
+                            <source src="/mp3/ColdplayYellow.mp3" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                        <p>Yellow</p>
+                    </article>
+                </section>
+            </div>
+        </div>
+
+    </div>
+
+    <!--Div container footer of the page-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
