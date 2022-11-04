@@ -330,5 +330,10 @@ audio {
 #loginform {
     justify-items: center;
     align-items: center;
-  }
+}
 
+#login-middle {
+    /* position in the center of the page */
+    position: relative;
+    margin-left: 43%;
+}

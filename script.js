@@ -59,7 +59,7 @@ $(document).ready(function () {
 
     /* Prevent default behavior on form submission */
     $("form").on("submit", function (ev) {
-        console.log("form clicked")
+        console.log("form clicked");
         ev.preventDefault();
         ev.stopPropagation();
     })
@@ -116,28 +116,25 @@ $(document).ready(function () {
 
     /* Submit login form */
     $(".loginbtn").click(function () {
-        preventDefault();
-        alert("here");
         /* assign info */
         let user = $("#username").val();
         let password = $("#psw").val();
-        alert(user);
         ind = false;
         /* check if email & matching psw exists in the cookie store */
         for (const cookie of cookies_store) {
             if (cookie.username == user) {
-                if (cookie.password == pass) {
+                if (cookie.password == password) {
                     ind = true;
-                }
-                else {
+                } else {
                     alert("Invalid username or password");
-                    return false;                
+                    return false;
                 }
             }
         }
         if (ind == false) {
             alert("Invalid username or password");
+            return false;
         }
+        console.log("logged in");
     });
 });
-
