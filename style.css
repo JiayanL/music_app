@@ -53,6 +53,10 @@ body {
     float: right;
 }
 
+.accountbtn {
+    float: right;
+}
+
 #NavBar a {
     display: block;
     color: white;
@@ -351,3 +355,35 @@ audio {
 /* -------------------------------------------------------------------------- */
 /*                        Styling for post login screen                       */
 /* -------------------------------------------------------------------------- */
+/* account page formatting */
+.account {
+    position: relative;
+    top: 80px;
+    width: 100%;
+    line-height: 2;
+    text-align: center;
+}
+
+.center {
+    text-align: center;
+}
+
+.first {
+    width: 20%;
+}
+
+.second {
+    width: 20%;
+}
+
+.third {
+    width: 20%;
+}
+
+.fourth {
+    width: 20%;
+}
+
+.fifth {
+    width: 20%;
+}

@@ -26,6 +26,7 @@ function getCookie(cname) {
     return "";
 }
 
+
 /* -------------------------------------------------------------------------- */
 /*                               Form Functions                               */
 /* -------------------------------------------------------------------------- */
@@ -166,4 +167,34 @@ $(document).ready(function () {
         alert(JSON.parse(cookie).username + " logged in successfully. Redirecting to homepage");
         window.location.href = "/pages/postlogin.html";
     });
+
+
+    /* -------------------------------------------------------------------------- */
+    /*                              Account Functions                             */
+    /* -------------------------------------------------------------------------- */
+
+    /* Update account info */
+    $(".savebtn").click(function () {
+        alert("saved");
+        let curruser = getCookie("user");
+        let parsedcookie = JSON.parse(curruser);
+        /* assign info */
+        const new_user_info = {
+            username: $("#nusername").val(),
+            email: parsedcookie.email,
+            password: $("#npsw").val(),
+            name: parsedcookie.name,
+            surname: parsedcookie.surname
+        };
+
+        /* update cookies store & existing cookie */
+        for (cookie in cookies_store) {
+            if (cookie.email == parsedcookie.email) {
+                cookie.username = new_user_info.username;
+                cookie.password = new_user_info.password;
+            }
+        }
+        let newcookie = JSON.stringify(new_user_info);
+        setCookie(parsedcookie.email, newcookie, 10);
+    })
 });
