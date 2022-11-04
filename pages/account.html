@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Exercise 1</title>
+    <link rel="stylesheet" href="../style.css" />
+    <!--Import Font Awesome for in-app icons-->
+    <script src="https://kit.fontawesome.com/13ed3a7f32.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body onload="loadCookie()">
+    <div class="account">
+        Modify Account Information
+        <form name="account" action="$">
+            <div>
+                <label for="nusername"><b>Username</b></label>
+                <input type="text" value="" placeholder="Enter Username" name="nusername" id="nusername" required>
+            </div>
+            <div>
+                <label for="npsw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="npsw" id="npsw" required>
+            </div>
+            <div>
+                <button class="savebtn" type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        function loadCookie() {
+            let cookie = getCookie("user");
+            let usecookie = JSON.parse(cookie);
+            $("#nusername").text(usecookie.username);
+            $("#npsw").text(usecookie.password);
+        }
+
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                        }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        
+    </script>
+</body>
+
+</html>
