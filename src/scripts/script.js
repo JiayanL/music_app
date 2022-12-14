@@ -13,6 +13,7 @@ function setCookie(cname, cvalue, exdays) {
 function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
+  console.log(decodedCookie);
   let ca = decodedCookie.split(";");
   for (let i = 0; i < ca.length; i++) {
     let c = ca[i];
@@ -52,9 +53,9 @@ function logIn() {
 function isLoggedIn() {
   cookie = getCookie("user");
   if (cookie != "") {
-    return false;
+    return true;
   }
-  return true;
+  return false;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -67,10 +68,18 @@ $(document).ready(function () {
   var cookies_store = [];
 
   /* Check if user is logged in */
-  //   if (isLoggedIn()) {
-  //     /* move to login page */
-  //     window.location.href = "../pages/postlogin.html";
-  //   }
+  var path = window.location.pathname;
+  var page = path.split("/").pop();
+  console.log(page);
+
+  if (page == "index.html" && isLoggedIn()) {
+    /* move to login page */
+    console.log("function is running");
+    window.location.href = "postlogin.html";
+    ev.preventDefault();
+  } else if (page == "postlogin.html" && !isLoggedIn()) {
+    window.location.href = "index.html";
+  }
 
   /* Prevent default behavior on form submission */
   $("form").on("submit", function (ev) {
@@ -166,7 +175,7 @@ $(document).ready(function () {
       JSON.parse(cookie).username +
         " logged in successfully. Redirecting to homepage"
     );
-    window.location.href = "index.html";
+    window.location.href = "postlogin.html";
   });
 
   /* -------------------------------------------------------------------------- */
