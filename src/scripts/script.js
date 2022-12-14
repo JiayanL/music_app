@@ -27,6 +27,41 @@ function getCookie(cname) {
   return "";
 }
 
+
+/* -------------------------------------------------------------------------- */
+/*                                Like Functions                              */
+/* -------------------------------------------------------------------------- */
+/* Like song */
+$(".likebtn").click(function () {
+  let songname = this.id;
+  //change value of button
+  if (this.value=="Like") {
+    this.value = "Unlike";
+  }
+  else {
+    this.value = "Like";
+  }
+  let exists;
+  let my_store;
+  //find current user's username
+  let curruser = getCookie("user");
+  let parsedcookie = JSON.parse(curruser);
+  let user = parsedcookie.username;
+  alert(user);
+  //find user's song store
+  for (a_store in song_store) {
+    if (a_store.user == user)
+    {
+      let list = a_store.store;
+      let song_bool = list[songname];
+      list[songname] = !song_bool;
+      setCookie(songname, !song_bool, 10);     
+      //let cvalue = getCookie(songname);
+      //let parsedcookie = JSON.parse(songname);
+    }
+  }
+});
+
 /* -------------------------------------------------------------------------- */
 /*                               Form Functions                               */
 /* -------------------------------------------------------------------------- */
@@ -66,6 +101,7 @@ function isLoggedIn() {
 $(document).ready(function () {
   /* Global variables for easier access */
   var cookies_store = [];
+  var song_store = [];
 
   /* Check if user is logged in */
   var path = window.location.pathname;
@@ -125,7 +161,12 @@ $(document).ready(function () {
     cookies_store.push(user_info);
 
     cookie = JSON.stringify(user_info);
-
+    
+   song_store.push({user: user_info.username, store: {"Circles": false, "Better Now":false, "White Iversion":false, 
+              "Lemon Tree": false, "Paranoid": false, "Hips Don't Lie": false, "La La La": false, "Me Enamore": false, 
+              "Waka Waka": false, "Whenever": false, "Adventure": false, "Hymn": false, "Paradise": false, "Viva La Vida": false, 
+              "Yellow": false}});
+ 
     /* Submit all cookies */
     // document.cookie = cookie;
     setCookie(user_info.email, cookie, 10);
@@ -151,7 +192,7 @@ $(document).ready(function () {
   /* Submit login form */
   $(".loginbtn").click(function () {
     /* assign info */
-    let user = $("#lusername").val();
+    let user = $("#lemail").val();
     let password = $("#lpsw").val();
     ind = false;
     /* check if email & matching psw exists in the cookie store */
